@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>P3C - Broadcaster</title>
+	<link rel="stylesheet" href="css/semantic.min.css">
+	<link rel="stylesheet" href="css/alertify.min.css">
+	<link rel="icon" type="image/png" href="img/phoenix.png">
+	<link rel="stylesheet" href="css/farmer.css">
+	<!-- GA -->
+	<meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos"/>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141280467-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-141280467-1');
+	</script>
+	<!-- END GA -->
+</head>
+
+<body>
+	<ui class="ui centered grid container intro" style="margin-top:10px;">
+		<div class="row">
+			<div class="column" style="text-align: center;">
+				<div class="ui header">
+					<img src="img/powh.png" style="display: block; margin: 0 auto; height:72px; width:auto; border-radius: 0px;" alt="">
+					<div class="sub header">
+						<h2>
+							Ethereum Classic Broadcaster - store your ad on chain and we'll host it on sites!</h2>
+					</div>
+					<div class="sub header">
+						<p>
+							Create a message and broadcast it to the world! Featured on <a target="_blank" href="https://DappDirect.net">DappDirect.net</a>,
+							<a target="_blank" href="https://commonwealth.gg">Commonwealth</a>, and partner sites.
+							<ul>
+								1. Make sure you have an <a target="_blank" href="https://forum.saturn.network/t/how-to-install-saturn-wallet-create-a-new-account/1302">ETC
+									wallet</a> with ETC in it.
+								<br>
+								2. Fill out the fields below "Buy It!" and click "Purchase" when ready.
+								<br>
+								<br>
+								<b>Rules:</b>
+								<li>Length of Text AND Link Text less than 140 characters. Img link 30 x 30.</li>
+								<li>Your image link should link to the actual image, make sure URL ends with .jpeg , .jpg , .gif , .svg, or
+									.png.</li>
+								<li>Broadcast is stored permanently on the blockchain and can be read by any Ethereum Classic node! Also hosted
+									on our <a target="_blank" href="https://api.commonwealth.gg/sponsor/">server</a>.</li>
+							</ul>
+						</p>
+						<div class="row sponsor">
+							<h2>Current Broadcast:</h2>
+							<div id="current" class="current"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui>
+	<div class="ui grid container app interface">
+		<div class="column">
+			<div class="ui raised segment">
+				<div class="ui grid app testframe">
+					<div class="two column row divided">
+						<div class="column buy">
+							<h2 class="ui aligned icon header">
+								<img src="img/spin-red.gif" alt=""> Current
+							</h2>
+							<div class="ui divider"></div>
+							<div class="ui grid">
+								<div class="sixteen wide column">
+									<h2>Owner</h2>
+									<span id="owner" class="sponsorPrice"></span>
+									<span id="time" class="sponsorPrice"></span>
+									<span id="purchasePrice" class="sponsorPrice"></span>
+									<h2>Image URL:</h2>
+									<div id="currentImg" class="sponsorPrice">1234/token</div>
+									<h2>Text:</h2><span id="currentText" class="sponsorPrice">1234/token</span>
+									<h2>Link Text:</h2><span id="currentLinkText" class="sponsorPrice">1234/token</span>
+									<h2>Link:</h2><span id="currentLink" class="sponsorPrice">1234/token</span>
+								</div>
+							</div>
+						</div>
+						<div class="column sell">
+							<h2 class="ui aligned icon header">
+								<img src="img/spin-green-down.gif" alt=""> Buy it!
+							</h2>
+							<p></p>
+							<div class="ui divider"></div>
+							<div class="ui grid">
+								<div class="sixteen wide column">
+									<h2>Img URL (30x30) - Optional:</h2>
+									<form class="ui form">
+										<div class="field">
+											<input type="text" id="imgLink" placeholder="https://i.imgur.com/7iEyv4Q.png">
+										</div>
+									</form>
+									<h2>Text</h2>
+									<form class="ui form">
+										<div class="field">
+											<input type="text" id="text" placeholder="New ICO incoming!">
+										</div>
+									</form>
+									<h2>Link Text</h2>
+									<form class="ui form">
+										<div class="field">
+											<input type="text" id="hyperlinkText" placeholder="Click Here.">
+										</div>
+									</form>
+									<h2>Link (include http/https):</h2>
+									<form class="ui form">
+										<div class="field">
+											<input type="text" id="hyperlink" placeholder="https://company.com">
+										</div>
+									</form>
+								</div>
+								<button id="purchase" class="ui huge button">Purchase, costs <div id="price">price</div></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column" style="text-align: center;">
+						<div class="ui header">
+							<div class="sub header">
+									<button id="sample" class="ui button">See example</button>
+								<div class="row sponsor">
+									<h2>Sample Broadcast (Fill out fields above and press button to see what your broadcast will look like):</h2>
+									<div id="sampleAd" class="current"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script src="js/jquery.min.js"></script>
+				<script src="js/moment.min.js"></script>
+				<script src="js/web3.min.js"></script>
+
+				<script src="lib/contracts.js"></script>
+				<script src="lib/sponsor.js"></script>
+
+</body>
+
+</html>
